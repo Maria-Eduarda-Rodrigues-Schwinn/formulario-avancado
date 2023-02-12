@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+header {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: white;
+
+  margin-bottom: 32px;
+}
+
+img {
+  width: 225px;
+  height: 100px;
+}
+
+h1 {
+  font-family: 'Staatliches';
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 45px;
+
+  margin-top: 107px;
+}
+
+p {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  margin-bottom: 23px;
+}
+
+body::before {
+  content: '';
+  width: 100%;
+  height: 464px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #293241;
+}
+
+body {
+  background: #BFD7E4;
+}
+
+form {
+  padding: 0 64px 64px 64px;
+  background: #FFFFFF;
+
+  border-radius: 0px 0px 20px 20px;
+
+  margin-bottom: 392px;
+}
+
+.page {
+  width: 750px;
+  margin: auto;
+}
+
+#cabecalho {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #F67669;
+  border-radius: 20px 20px 0px 0px;
+
+  height: 133px;
+
+  font-family: 'Staatliches';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 34px;
+  color: white;
+}
+
+fieldset {
+  border: none;
+
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.nome-sobrenome {
+  display: flex;
+  gap: 22px;
+
+  margin-top: 31.66px;
+}
+
+.nome-sobrenome > div:nth-child(1) {
+  width: 300px;
+}
+
+.nome-sobrenome > div:nth-child(2) {
+  width: 300px;
+}
+
+label {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+
+  color: #4E4958;
+}
+
+span {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+
+  color: #C1BCCC;
+
+  margin-left: 9.12px;
+}
+
+span:hover {
+  color: #716d78;
+}
+
+input {
+  background: #FAFAFC;
+
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+  
+  height: 55px;
+
+  padding: 0 22px;
+
+  margin-top: 8px;
+  margin-bottom: 31.73px;
+
+  font-size: 16px;
+  line-height: 26px;
+
+  color: #6c6a71;
+}
+
+fieldset legend {
+  font-family: 'Staatliches';
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 34px;
+
+  color: #253B51;
+
+  padding:31.73px 0 7.93px;
+  border-bottom: 1px solid #E6E6F0;
+
+  margin: 0 auto 31.73px;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+select {
+  background: #FAFAFC;
+
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+  
+  height: 55px;
+
+  padding: 0 22px;
+
+  margin-top: 8px;
+  margin-bottom: 31.73px;
+
+  appearance: none;
+
+  font-size: 16px;
+  line-height: 26px;
+
+  color: #6c6a71;
+}
+
+.input-wrapper #textarea {
+  height: 166.59px;
+
+  font-size: 16px;
+  line-height: 26px;
+
+  color: #6c6a71;
+
+  padding: 0;
+
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+}
+
+.checkbox-wrapper {
+  position: relative
+}
+
+.checkbox-wrapper label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin: 0;
+  margin-top: 24px;
+}
+
+.checkbox-wrapper input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+
+  opacity: 0;
+}
+
+/*::before: adicionar um elemento pelo css*/
+.checkbox-wrapper label::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: block;
+
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+}
+
+/*verifica se ta em foco, se ele tiver em foco eu pego o label::before
+outline: funciona tipo border, mas melhor como acessibilidade*/
+.checkbox-wrapper input:focus + label::before {
+  outline: 2px solid black;
+}
+
+/*quando clicar no input dai pega o label e aplica a cor*/
+.checkbox-wrapper input:checked + label::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1111_20)'%3E%3Cpath d='M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z' fill='%2342D3FF'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1111_20'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+}
+
+.agenda {
+  display: flex;
+  gap: 22px;
+}
+
+/*o primeiro nivel de div: .col-3 > div*/
+/*nth-child(1): filho úmero 1*/
+
+.agenda > div:nth-child(1) {
+  width: 100%;
+}
+
+.button {
+  padding: 12.5px 286px;
+
+  font-family: 'Staatliches';
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+
+  color: #FFFFFF;
+
+  background: #F67669;
+  border-radius: 8px;
+
+  border: none;
+
+  margin-top: 63.73px;
+}
